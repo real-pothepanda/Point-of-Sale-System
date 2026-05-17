@@ -1,0 +1,43 @@
+C:\Users\USER\Desktop\GitHub\VBNet\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point of Sale System.vbprojResolveAssemblyReference.cache
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point of Sale System.vbproj.GenerateResource.Cache
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Point of Sale System.exe.config
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Point of Sale System.exe
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Point of Sale System.pdb
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Point of Sale System.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\MySql.Data.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\MySql.Data.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point_of_Sale_System.AdminDashboardForm.resources
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point_of_Sale_System.LoginForm.resources
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point_of_Sale_System.PosForm.resources
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point_of_Sale_System.ProductManagementForm.resources
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point_of_Sale_System.UserManagementForm.resources
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point_of_Sale_System.Resources.resources
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point of Sale System.exe
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point of Sale System.xml
+E:\WindowsApplication1\WindowsApplication1\obj\Debug\Point of Sale System.pdb
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\BouncyCastle.Crypto.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Google.Protobuf.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\K4os.Compression.LZ4.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\K4os.Hash.xxHash.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Buffers.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.IO.Pipelines.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Memory.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Numerics.Vectors.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\BouncyCastle.Crypto.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Google.Protobuf.pdb
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\Google.Protobuf.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\K4os.Compression.LZ4.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\K4os.Hash.xxHash.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Buffers.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.IO.Pipelines.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Memory.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Numerics.Vectors.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\WindowsApplication1\WindowsApplication1\bin\Debug\System.Threading.Tasks.Extensions.xml
