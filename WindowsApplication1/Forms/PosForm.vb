@@ -37,8 +37,12 @@ Public Class PosForm
                 Return
             End If
 
-            AddToCart(product, scan.Quantity)
-            ShowStatus("Added " & scan.Quantity.ToString() & " x " & product.Name, Color.DarkGreen)
+            Dim success As Boolean = AddToCart(product, scan.Quantity)
+            If success = True Then
+                ShowStatus("Added " & scan.Quantity.ToString() & " x " & product.Name, Color.DarkGreen)
+            Else
+                ShowStatus("")
+            End If
         Catch ex As Exception
             ShowStatus(ex.Message)
         Finally
@@ -47,23 +51,34 @@ Public Class PosForm
         End Try
     End Sub
 
-    Private Sub AddToCart(product As Product, quantity As Integer)
+    Private Function AddToCart(product As Product, quantity As Integer) As Boolean
         Dim existing = _cart.FirstOrDefault(Function(item) item.ProductID = product.Id)
+        Dim currentCartQty = If(existing IsNot Nothing, existing.Quantity, 0)
+
+        If currentCartQty + quantity > product.StockQuantity Then
+            MessageBox.Show("Not enough stock! You only have " & product.StockQuantity & " of '" & product.Name & "' left in inventory.", "Stock Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
+            ScanTextBox.Clear()
+            ScanTextBox.Focus()
+            Return False
+        End If
+
         If existing Is Nothing Then
             _cart.Add(New SaleItem With {
-                .ProductID = product.Id,
-                .Barcode = product.Barcode,
-                .ProductName = product.Name,
-                .Quantity = quantity,
-                .UnitPrice = product.Price
-            })
+            .ProductID = product.Id,
+            .Barcode = product.Barcode,
+            .ProductName = product.Name,
+            .Quantity = quantity,
+            .UnitPrice = product.Price
+        })
         Else
             existing.Quantity += quantity
             _cart.ResetBindings()
         End If
 
         RefreshTotal()
-    End Sub
+        Return True
+    End Function
 
     Private Sub RefreshTotal()
         TotalLabel.Text = "Total: " & _cart.Sum(Function(item) item.LineTotal).ToString("N2")
@@ -125,6 +140,12 @@ Public Class PosForm
 
     Private Sub LogoutButton_Click(sender As Object, e As EventArgs) Handles LogoutButton.Click
         Session.CurrentUser = Nothing
+        Dim loginScreen = Application.OpenForms.OfType(Of LoginForm)().FirstOrDefault()
+
+        If loginScreen IsNot Nothing Then
+            loginScreen.PasswordTextBox.Clear()
+            loginScreen.Show()
+        End If
         Me.Close()
     End Sub
 End Class

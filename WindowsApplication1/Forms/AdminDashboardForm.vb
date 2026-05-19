@@ -21,6 +21,13 @@ Partial Public Class AdminDashboardForm
     End Sub
 
     Private Sub LogoutButton_Click(sender As Object, e As EventArgs) Handles LogoutButton.Click
-        Close()
+        Session.CurrentUser = Nothing
+        Dim loginScreen = Application.OpenForms.OfType(Of LoginForm)().FirstOrDefault()
+
+        If loginScreen IsNot Nothing Then
+            loginScreen.PasswordTextBox.Clear()
+            loginScreen.Show()
+        End If
+        Me.Close()
     End Sub
 End Class

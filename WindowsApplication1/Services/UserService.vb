@@ -5,6 +5,7 @@ Imports Point_of_Sale_System.Services
 Public Class UserService
     Private ReadOnly _users As New UserRepository()
     Private ReadOnly _hasher As New PasswordHasher()
+
     Private Sub ValidateUser(user As AppUser, plainPassword As String)
         If String.IsNullOrWhiteSpace(user.FullName) Then
             Throw New ArgumentException("Full name is required.")
@@ -19,6 +20,7 @@ Public Class UserService
             Throw New ArgumentException("Role must be admin or cashier.")
         End If
     End Sub
+
     Public Sub Save(user As AppUser, plainPassword As String)
         ValidateUser(user, plainPassword)
         Dim shouldUpdatePassword = Not String.IsNullOrWhiteSpace(plainPassword)
@@ -31,10 +33,28 @@ Public Class UserService
             _users.Update(user, shouldUpdatePassword)
         End If
     End Sub
+
     Public Function GetAll() As List(Of AppUser)
         Return _users.GetAll()
     End Function
+
     Public Sub Deactivate(id As Integer)
         _users.Deactivate(id)
     End Sub
+
+    ' --- THE MISSING PIECE WE JUST ADDED ---
+    Public Function Authenticate(username As String, passwordHash As String) As AppUser
+        ' 1. Ask the repository to find the user by their username
+        Dim user = _users.FindByUsername(username)
+
+        ' 2. If the user exists AND their scrambled password matches the database...
+        If user IsNot Nothing AndAlso user.PasswordHash = passwordHash Then
+            Return user ' Hand them over to the form to face the HR trap!
+        End If
+
+        ' 3. If it doesn't match, return Nothing (Wrong password)
+        Return Nothing
+    End Function
+    ' ---------------------------------------
+
 End Class
