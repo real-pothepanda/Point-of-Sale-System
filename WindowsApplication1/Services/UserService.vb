@@ -41,20 +41,12 @@ Public Class UserService
     Public Sub Deactivate(id As Integer)
         _users.Deactivate(id)
     End Sub
-
-    ' --- THE MISSING PIECE WE JUST ADDED ---
     Public Function Authenticate(username As String, passwordHash As String) As AppUser
-        ' 1. Ask the repository to find the user by their username
         Dim user = _users.FindByUsername(username)
-
-        ' 2. If the user exists AND their scrambled password matches the database...
         If user IsNot Nothing AndAlso user.PasswordHash = passwordHash Then
-            Return user ' Hand them over to the form to face the HR trap!
+            Return user
         End If
-
-        ' 3. If it doesn't match, return Nothing (Wrong password)
         Return Nothing
     End Function
-    ' ---------------------------------------
 
 End Class
